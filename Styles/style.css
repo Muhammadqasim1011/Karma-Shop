@@ -52,7 +52,7 @@ i {
 }
 
 header {
-    min-height: 100vh;
+    min-height: 110vh;
     background: url(../Images/banner-bg.jpg);
     background-position: center;
     background-size: cover;
@@ -222,6 +222,54 @@ footer {
 
 
 /* End of Footer */
+
+.hero{
+    max-width: 1140px;
+    margin: 90px auto 0;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.left,
+.right{
+    flex: 1;
+}
+
+.right img{
+    max-width: 100%;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+} 
+
+.left div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem;
+    background: linear-gradient(90deg, var(--ancent1-clr), var(--ancent2-clr));
+    border-radius: 50%;
+    color: var(--light-clr);
+    border: none;
+}
+
+.btn i{
+    color: var(--light-clr);
+    font-size: 24px;
+}
 
 @media (max-width: 1000px) {
     .footer-grid {
