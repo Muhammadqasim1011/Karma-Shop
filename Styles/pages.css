@@ -1,0 +1,35 @@
+:root {
+    --dark-clr: #222222;
+    --light-clr: #FFFFFF;
+    --text-clr: rgba(0, 0, 0, 0.8);
+    --text-clr2: rgba(244, 244, 244, 0.4);
+    --ancent1-clr: #FFB600;
+    --ancent2-clr: #FE6D00;
+    --shadow-clr: rgba(0, 0, 0, 0.1);
+    --t-speed: 300ms;
+}
+
+header {
+    min-height: 65vh;
+    background: url(../Images/common-banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cart-hero h1{
+    color: var(--light-clr);
+    position: relative;
+    text-align: right;
+    margin: 100px 40px 0 0;
+}
+
+@media (max-width: 768px){
+    header{
+        background: linear-gradient(90deg, var(--ancent1-clr), var(--ancent2-clr));
+    }
+    .cart-hero h1{
+        text-align: left;
+        margin: 100px 0 0 40px;
+    }
+}

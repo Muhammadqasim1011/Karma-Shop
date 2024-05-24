@@ -3,7 +3,7 @@
     --light-clr: #FFFFFF;
     --text-clr: rgba(0, 0, 0, 0.8);
     --text-clr2: rgba(244, 244, 244, 0.4);
-    --ancent1-clr: #FFBA52;
+    --ancent1-clr: #FFB600;
     --ancent2-clr: #FE6D00;
     --shadow-clr: rgba(0, 0, 0, 0.1);
     --t-speed: 300ms;
@@ -28,7 +28,7 @@ body {}
 }
 
 h1 {
-    font-size: clamp(32px, 4.9vw, 70px);
+    font-size: clamp(32px, 4.9vw, 60px);
 }
 
 h2 {
@@ -56,6 +56,7 @@ header {
     background: url(../Images/banner-bg.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 nav {
@@ -69,6 +70,7 @@ nav {
     background: var(--light-clr);
     padding: 1rem 3rem;
     box-shadow: 0 10px 20px var(--shadow-clr);
+    z-index: 1;
 }
 
 .sticky {
@@ -363,7 +365,7 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     nav ul {
         display: none;
         flex-direction: column;
@@ -418,7 +420,7 @@ footer {
     .menu-icon.open .bx-menu {
         display: none;
     }
-}
+} */
 
 @media (max-width:575px) {
     .footer-grid {
