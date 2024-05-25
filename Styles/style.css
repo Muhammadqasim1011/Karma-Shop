@@ -73,6 +73,7 @@ i {
 dl, ol, ul {
     margin-top: 0;
     margin-bottom: 0;
+    padding-left: 0;
 }
 
 header {
@@ -134,8 +135,8 @@ nav li {
 
 .cart-total {
     position: absolute;
-    top: -4px;
-    right: 8px;
+    top: -10px;
+    right: 4px;
     background-color: var(--ancent1-clr);
     color: white;
     border-radius: 50%;
