@@ -76,7 +76,7 @@ dl, ol, ul {
 }
 
 header {
-    min-height: 110vh;
+    min-height: 100vh;
     background: url(../Images/banner-bg.jpg);
     background-position: center;
     background-size: cover;
@@ -87,7 +87,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     margin: auto;
     position: relative;
     top: 40px;
@@ -96,6 +95,7 @@ nav {
     box-shadow: 0 10px 20px var(--shadow-clr);
     z-index: 1;
 }
+
 
 .sticky {
     position: fixed;
@@ -124,7 +124,7 @@ nav ul i {
 }
 
 nav li {
-    padding: 1rem;
+    padding: 0.7rem;
     position: relative;
 }
 
@@ -390,6 +390,7 @@ footer {
     top: 50%;
     opacity: 1;
     visibility: visible;
+    
 }
 .single-deal:hover .overlay {
     opacity: .5;
@@ -505,7 +506,7 @@ p.old-price{
 .exclusive-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 120vh;
+    min-height: 100vh;
     /* background: red; */
 }
 
@@ -535,14 +536,19 @@ p.old-price{
 
 .clock{
     display: flex;
+    justify-content: space-evenly;
     background: var(--light-clr);
     padding: 1rem 0;
     border-radius: 4px;
+    max-width: 499px;
+    width: 90%;
 }
 
 .time{
     padding: 0 1.4rem;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
+    
+
 }
 
 .time:last-child{
@@ -583,9 +589,56 @@ p.old-price{
     align-items: center;
     gap: 1rem;
 }
+/* End of Exclusive */
+
+.con-grid{
+    display: grid;
+    place-items: center;
+    gap: 7px;
+    grid-template-columns: repeat(5 , 1fr);
+}
+
+.con-grid img{
+    width: 100%;
+}
+
+/* End of Contract */
+
+.deal-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem 1rem;
+    place-content: center;
+}
+
+.deal-content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px;
+}
+
+.deal-content img{
+    max-width: 100%;
+}
+
+.deal-content .price{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+}
+.deal-hover{
+    transition: all var(--t-speed);
+}
+.deal-grid a:hover .deal-hover{
+    color: var(--ancent2-clr);
+}
 /* Media Queries */
 
 @media (max-width: 1000px) {
+    .section-gap {
+        padding: 90px 0;
+    }
     .nav{
         padding: 0.7rem;
     }
@@ -622,6 +675,9 @@ p.old-price{
 }
 
 @media (max-width: 768px) {
+    .section-gap {
+        padding: 70px 0;
+    }
     header{
         min-height: 80vh;
         padding-bottom: 40px;
@@ -713,8 +769,11 @@ p.old-price{
 }
 
 @media (max-width:575px) {
+    .section-gap {
+        padding: 40px 0;
+    }
     .footer-grid {
-        /* grid-template-columns: 1fr; */
+        grid-template-columns: 1fr;
     }
 
     .section_gap {
@@ -731,6 +790,11 @@ p.old-price{
     }
     .product-item .product-img{
         height: 300px;
+    }
+
+    .deal-grid{
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
 }
 
