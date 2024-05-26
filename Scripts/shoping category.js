@@ -146,3 +146,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Function to update cart count in local storage
+function updateCartCountInLocalStorage(count) {
+    localStorage.setItem('cartProductCount', count);
+}
+
+// Function to retrieve cart count from local storage
+function getCartCountFromLocalStorage() {
+    const count = localStorage.getItem('cartProductCount');
+    return count ? parseInt(count) : 0;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    const cartProductCount = document.getElementById('cart-product-count');
+
+    // Initialize cart count
+    let totalCount = getCartCountFromLocalStorage();
+    cartProductCount.textContent = totalCount;
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update cart count
+            totalCount++;
+            cartProductCount.textContent = totalCount;
+            updateCartCountInLocalStorage(totalCount);
+        });
+    });
+});

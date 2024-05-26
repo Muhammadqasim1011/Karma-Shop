@@ -44,3 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
+document.getElementById('clear-storage-btn').addEventListener('click', function() {
+    // Clear local storage
+    localStorage.clear();
+    // Optionally, you can add a confirmation message
+    alert('Local storage cleared successfully!');
+});
