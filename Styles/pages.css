@@ -10,7 +10,7 @@
 }
 
 header {
-    min-height: 65vh;
+    min-height: 50vh;
     background: url(../Images/common-banner.jpg);
     background-position: center;
     background-size: cover;
@@ -18,7 +18,7 @@ header {
 }
 
 .cart-hero h1{
-    color: var(--light-clr);
+    color: var(--dark-clr);
     position: relative;
     text-align: right;
     margin: 100px 40px 0 0;
