@@ -16,8 +16,8 @@ for (let i = 1; i <= 60; i++) {
         id: i,
         imgSrc: `../Images/image${i}.jpg`,
         title: `Product Title Goes Here ${i}`,
-        newPrice: `$${(Math.random() * 100 + 50).toFixed(2)}`,
-        oldPrice: `$${(Math.random() * 50 + 150).toFixed(2)}`,
+        newPrice: (Math.random() * 100 + 50).toFixed(2),
+        oldPrice: (Math.random() * 50 + 150).toFixed(2),
         description: `This is the description for product ${i}. It has amazing features and benefits.`,
         reviews: `${Math.floor(Math.random() * 500)} reviews`
     });
@@ -32,7 +32,37 @@ function shuffleArray(array) {
 }
 
 let currentPage = 0;
-const itemsPerPage = 12;
+
+function getFilteredProducts() {
+    const priceFilter = document.querySelector('input[name="color"]:checked');
+    let filteredProducts = [...products];
+
+    if (priceFilter) {
+        const priceRange = priceFilter.id;
+
+        switch (priceRange) {
+            case 'black':
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.newPrice) < 100);
+                break;
+            case 'balckleather':
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.newPrice) >= 100 && parseFloat(product.newPrice) <= 200);
+                break;
+            case 'blackred':
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.newPrice) > 200 && parseFloat(product.newPrice) <= 400);
+                break;
+            case 'gold':
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.newPrice) > 400 && parseFloat(product.newPrice) <= 499);
+                break;
+            case 'spacegrey':
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.newPrice) > 499);
+                break;
+            default:
+                break;
+        }
+    }
+
+    return filteredProducts;
+}
 
 function renderFeaturedProducts() {
     const productContent = document.getElementById('product-content-featured');
@@ -41,17 +71,17 @@ function renderFeaturedProducts() {
     const sortingOrder = document.getElementById('sorting-order').value;
     const showItemCount = parseInt(document.getElementById('show-item').value, 10);
 
-    let sortedProducts = [...products];
+    let filteredProducts = getFilteredProducts();
 
     if (sortingOrder === 'Random') {
-        sortedProducts = shuffleArray(sortedProducts);
+        filteredProducts = shuffleArray(filteredProducts);
     } else if (sortingOrder === 'Reverse') {
-        sortedProducts.reverse();
+        filteredProducts.reverse();
     }
 
     const start = currentPage * showItemCount;
     const end = start + showItemCount;
-    const paginatedProducts = sortedProducts.slice(start, end);
+    const paginatedProducts = filteredProducts.slice(start, end);
 
     paginatedProducts.forEach(product => {
         const productItem = document.createElement('div');
@@ -62,8 +92,8 @@ function renderFeaturedProducts() {
             <div class="product-content">
                 <h2 class="title">${product.title}</h2>
                 <div class="price">
-                    <p class="new-price">${product.newPrice}</p>
-                    <p class="old-price">${product.oldPrice}</p>
+                    <p class="new-price">$${product.newPrice}</p>
+                    <p class="old-price">$${product.oldPrice}</p>
                 </div>
                 <div class="product-icon">
                     <i class='bx bx-cart-alt add-to-cart-btn'><span>Add to Cart</span></i>
@@ -102,10 +132,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.bx-right-arrow-alt').forEach(arrow => {
         arrow.addEventListener('click', () => {
-            if ((currentPage + 1) * parseInt(document.getElementById('show-item').value, 10) < products.length) {
+            if ((currentPage + 1) * parseInt(document.getElementById('show-item').value, 10) < getFilteredProducts().length) {
                 currentPage++;
                 renderFeaturedProducts();
             }
         });
     });
+
+    document.querySelectorAll('input[name="color"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            currentPage = 0;
+            renderFeaturedProducts();
+        });
+    });
 });
+

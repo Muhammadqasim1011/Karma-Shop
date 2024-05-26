@@ -43,7 +43,8 @@
                     </ul>
                 </li>
                 <li><a class="hw" href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-cart-alt hw'></i></a></li>
+                <li id="cart-icon"><a href="./Pages/cart.html"><i class="bx bx-cart"></i><span class="cart-total"
+                            id="cart-product-count">0</span></a></li>
                 <li><i class='bx bx-search-alt-2 hw'></i></li>
             </ul>
         </nav>
@@ -172,9 +173,29 @@
                     </ul>
                 </div>
 
-
                 <div class="browse-content">
                     <p class="head">Products Filter</p>
+
+                    <div class="filter-content">
+                        <p><strong>Price</strong></p>
+                        <form action="#">
+                            <ul>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="black"
+                                        name="color"><label for="black">
+                                        < $100</label>
+                                </li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather"
+                                        name="color"><label for="balckleather">$100 - $200</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred"
+                                        name="color"><label for="blackred">$200 - $400</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="gold"
+                                        name="color"><label for="gold">$400 - $499</label></li>
+                                <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey"
+                                        name="color"><label for="spacegrey">> $499</span></label></li>
+                            </ul>
+                        </form>
+
+                    </div>
 
                     <div class="filter-content">
                         <p><strong>Brands</strong></p>
@@ -214,25 +235,6 @@
                         </form>
                     </div>
 
-                    <div class="filter-content">
-                        <p><strong>Price</strong></p>
-                        <form action="#">
-                            <ul>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="black"
-                                        name="color"><label for="black"> < $100</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="balckleather"
-                                        name="color"><label for="balckleather">$100 - $200</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="blackred"
-                                        name="color"><label for="blackred">$200 - $400</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="gold"
-                                        name="color"><label for="gold">$400 - $499</label></li>
-                                <li class="filter-list"><input class="pixel-radio" type="radio" id="spacegrey"
-                                        name="color"><label for="spacegrey">> $499</span></label></li>
-                            </ul>
-                        </form>
-                        
-                    </div>
-
                 </div>
 
             </div>
@@ -247,32 +249,32 @@
                                 <option value="Random">Random Sorting</option>
                                 <option value="Reverse">Reverse Sorting</option>
                             </select>
-                            
+
                             <select name="show-item" id="show-item" class="show-item">
                                 <option value="12">Show 12</option>
                                 <option value="9">Show 9</option>
                                 <option value="6">Show 6</option>
                             </select>
-    
+
                         </div>
                         <div>
                             <i class='bx bx-left-arrow-alt'></i>
-                            <i class='bx bx-right-arrow-alt' ></i>
+                            <i class='bx bx-right-arrow-alt'></i>
                         </div>
                     </div>
 
                 </div>
-    
+
                 <div class="all-grid product-content section-gap" id="product-content-featured">
 
                 </div>
 
-    
+
                 <div class="main-grid-item sorting">
-                   <div class="sorting-content sorting-content-2">
+                    <div class="sorting-content sorting-content-2">
                         <div class="last-icon">
                             <i class='bx bx-left-arrow-alt'></i>
-                            <i class='bx bx-right-arrow-alt' ></i>
+                            <i class='bx bx-right-arrow-alt'></i>
                         </div>
                     </div>
                 </div>
@@ -482,7 +484,9 @@
     </footer>
     <!-- End of footer -->
     <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/product.js"></script>
     <script src="../Scripts/shoping category.js"></script>
+    
 </body>
 
 </html>
