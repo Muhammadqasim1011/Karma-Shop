@@ -31,12 +31,29 @@ function shuffleArray(array) {
     return array;
 }
 
-// Function to render featured products
+let currentPage = 0;
+const itemsPerPage = 12;
+
 function renderFeaturedProducts() {
     const productContent = document.getElementById('product-content-featured');
-    const shuffledProducts = shuffleArray([...products]).slice(0, 12); // Get a shuffled array of 8 products
+    productContent.innerHTML = '';
 
-    shuffledProducts.forEach(product => {
+    const sortingOrder = document.getElementById('sorting-order').value;
+    const showItemCount = parseInt(document.getElementById('show-item').value, 10);
+
+    let sortedProducts = [...products];
+
+    if (sortingOrder === 'Random') {
+        sortedProducts = shuffleArray(sortedProducts);
+    } else if (sortingOrder === 'Reverse') {
+        sortedProducts.reverse();
+    }
+
+    const start = currentPage * showItemCount;
+    const end = start + showItemCount;
+    const paginatedProducts = sortedProducts.slice(start, end);
+
+    paginatedProducts.forEach(product => {
         const productItem = document.createElement('div');
         productItem.classList.add('all-grid-item', 'product-item', `product-item-${product.id}`);
 
@@ -61,4 +78,34 @@ function renderFeaturedProducts() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', renderFeaturedProducts);
+document.addEventListener('DOMContentLoaded', () => {
+    renderFeaturedProducts();
+
+    document.getElementById('sorting-order').addEventListener('change', () => {
+        currentPage = 0;
+        renderFeaturedProducts();
+    });
+
+    document.getElementById('show-item').addEventListener('change', () => {
+        currentPage = 0;
+        renderFeaturedProducts();
+    });
+
+    document.querySelectorAll('.bx-left-arrow-alt').forEach(arrow => {
+        arrow.addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                renderFeaturedProducts();
+            }
+        });
+    });
+
+    document.querySelectorAll('.bx-right-arrow-alt').forEach(arrow => {
+        arrow.addEventListener('click', () => {
+            if ((currentPage + 1) * parseInt(document.getElementById('show-item').value, 10) < products.length) {
+                currentPage++;
+                renderFeaturedProducts();
+            }
+        });
+    });
+});

@@ -144,11 +144,20 @@ select, option {
 .sorting-order option:hover, .show-item option:hover {
     background-color: #fff;
 }
+.sorting-content-2{
+    display: block;
+}
 
+.sorting-content .last-icon{
+    display: flex !important;
+    justify-content: space-between !important;
+}
 
 .all-grid{
     grid-template-columns: repeat(3 ,1fr);
 }
+
+
 
 @media (max-width: 1000px){
     .all-grid{
