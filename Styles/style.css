@@ -23,6 +23,7 @@
     list-style: none;
     text-decoration: none;
     color: var(--dark-clr);
+    border-radius: 7px;
 }
 
 body {}
