@@ -1,5 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     renderFeaturedProduct();
+
+    document.getElementById('show-next-product').addEventListener('click', () => {
+        renderFeaturedProduct();
+    });
 });
 
 function renderFeaturedProduct() {

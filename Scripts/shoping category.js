@@ -100,7 +100,7 @@ function renderFeaturedProducts() {
                     <i class='bx bx-cart-alt add-to-cart-btn'><span>Add to Cart</span></i>
                     <i class='bx bxs-heart'><span>Wishlist</span></i>
                     <i class='bx bx-git-compare'><span>Compare</span></i>
-                    <i class='bx bx-last-page view-more-btn' data-id="${product.id}"><span>View more</span></i>
+                    <a href="./product detail.html"><i class='bx bx-last-page view-more-btn' data-id="${product.id}"><span>View more</span></i></a>
                 </div>
             </div>
         `;
