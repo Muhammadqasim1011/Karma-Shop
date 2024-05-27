@@ -76,6 +76,39 @@ dl, ol, ul {
     padding-left: 0;
 }
 
+img{
+    transition: all var(--t-speed);
+}
+
+img:hover{
+    scale: 1.04;
+}
+
+.primary-btn:before {
+    position: absolute;
+    left: -145px;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: #000;
+    opacity: 0;
+    -webkit-transform: skew(40deg);
+    -moz-transform: skew(40deg);
+    -ms-transform: skew(40deg);
+    -o-transform: skew(40deg);
+    transform: skew(40deg);
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.primary-btn:hover:before {
+    /* left: 180px; */
+    opacity: .3;
+}
+
 header {
     min-height: 100vh;
     background: url(../Images/banner-bg.jpg);
@@ -95,6 +128,8 @@ nav {
     padding: 1rem;
     box-shadow: 0 10px 20px var(--shadow-clr);
     z-index: 1;
+    width: 94%;
+    transition: all var(--t-speed);
 }
 
 
@@ -102,7 +137,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    margin: auto;
+    margin:0 auto;
     background: var(--light-clr);
     box-shadow: 0 10px 20px var(--shadow-clr);
     z-index: 1000;

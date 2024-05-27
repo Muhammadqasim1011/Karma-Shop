@@ -1,0 +1,156 @@
+:root {
+    --dark-clr: #222222;
+    --light-clr: #FFFFFF;
+    --text-clr: rgba(0, 0, 0, 0.8);
+    --text-clr2: rgba(244, 244, 244, 0.4);
+    --text-clr3: rgba(244, 244, 244, 0.2);
+    --text-clr4: rgba(0, 0, 0, 0.04);
+    --ancent1-clr: #FFB600;
+    --ancent2-clr: #FE6D00;
+
+    --ancent3-clr: #828BB2;
+
+    --shadow-clr: rgba(0, 0, 0, 0.1);
+    --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --t-speed: 300ms;
+}
+
+.detail-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    place-items: center;
+}
+
+.detail-item img{
+    width: 100%;
+}
+
+.detail-item-2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.detail-item h2.detail-price,
+.detail-item .detail-category span{
+    color: var(--ancent1-clr);
+}
+
+.detail-item p span{
+    margin-left: 20px;
+}
+
+.detail-discription{
+    padding-block: 2rem 1rem;
+}
+
+.detail-item .detail-check{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--shadow-clr);
+}
+
+#quantity {
+    width: 80px; /* Adjust width as needed */
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Hide default spinner buttons */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Container for custom buttons */
+.number-input {
+    display: flex;
+    align-items: center;
+}
+
+.number-input button {
+    background: var(--ancent1-clr);
+    color: var(--light-clr);
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.number-input button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.number-input button:first-of-type {
+    margin-right: 5px;
+}
+
+.number-input button:last-of-type {
+    margin-left: 5px;
+}
+
+
+.primary-btn2 {
+    border: none;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(90deg, var(--ancent1-clr), var(--ancent2-clr));
+    padding: 0 30px;
+    line-height: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.primary-btn2:hover {
+    color: #fff;
+}
+
+.primary-btn2:before {
+    position: absolute;
+    left: -145px;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: #000;
+    opacity: 0;
+    -webkit-transform: skew(40deg);
+    -moz-transform: skew(40deg);
+    -ms-transform: skew(40deg);
+    -o-transform: skew(40deg);
+    transform: skew(40deg);
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.primary-btn2:hover:before {
+    left: 180px;
+    opacity: .3;
+}
+
+
