@@ -55,39 +55,30 @@
         </div>
     </header>
     <!-- End of Header -->
-
+    
     <section class="product-detail wrapper section-gap">
         <div class="detail-grid">
-
             <div class="detail-item">
-                <img src="../Images/image1.jpg" alt="Product-1">
+                <img id="product-img" src="" alt="Product Image">
             </div>
-
             <div class="detail-item detail-item-2">
-                <h2 class="detail-head">Faded SkyBlu Denim Jeans</h2>
-                <h2 class="detail-price">$200</h2>
-
-                <p class="detail-category">Category <span>:Household</span></p>
-                <p class="detail-check">Availibility <span>:In Stock</span></p>
-
-                <p class="detail-discription">Mill Oil is an innovative oil filled radiator with the most modern
-                    technology. If you are looking for something that can make your interior look awesome, and at the
-                    same time give you the pleasant warm feeling during the winter.</p>
-
-
-                    <div class="number-input">
-                        <label for="quantity" style="margin-right: 1rem;">Quantity:</label>
-                        <button id="decrement">-</button>
-                        <input type="number" id="quantity" min="1" max="100" value="1">
-                        <button id="increment">+</button>
-                    </div>
-
+                <h2 id="product-title" class="detail-head"></h2>
+                <h2 id="product-price" class="detail-price"></h2>
+                <p class="detail-category">Category <span id="product-category"></span></p>
+                <p class="detail-check">Availability <span id="product-availability"></span></p>
+                <p id="product-description" class="detail-description"></p>
+                <div class="number-input">
+                    <label for="quantity" style="margin-right: 1rem;">Quantity:</label>
+                    <button id="decrement">-</button>
+                    <input type="number" id="quantity" min="1" max="100" value="1">
+                    <button id="increment">+</button>
+                </div>
                 <button class="primary-btn2 add-to-cart-btn" href="#">Add to Cart</button>
             </div>
         </div>
-
-        </div>
     </section>
+
+    <!-- End of Product Detail -->
 
     <section class="deal" style="padding-bottom: 40px;">
         <div class="wrapper">

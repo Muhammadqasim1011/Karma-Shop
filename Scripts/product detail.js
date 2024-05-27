@@ -1,28 +1,33 @@
-const incrementButton = document.getElementById('increment');
-        const decrementButton = document.getElementById('decrement');
-        const quantityInput = document.getElementById('quantity');
+document.addEventListener('DOMContentLoaded', () => {
+    renderFeaturedProduct();
+});
 
-        incrementButton.addEventListener('click', () => {
-            const currentValue = Number(quantityInput.value);
-            if (currentValue < Number(quantityInput.max)) {
-                quantityInput.value = currentValue + 1;
-                updateButtonStates();
-            }
-        });
+function renderFeaturedProduct() {
+    const productContent = document.getElementById('product-content-featured');
+    const randomProduct = products[Math.floor(Math.random() * products.length)]; // Get a random product
 
-        decrementButton.addEventListener('click', () => {
-            const currentValue = Number(quantityInput.value);
-            if (currentValue > Number(quantityInput.min)) {
-                quantityInput.value = currentValue - 1;
-                updateButtonStates();
-            }
-        });
+    document.getElementById('product-img').src = randomProduct.imgSrc;
+    document.getElementById('product-title').textContent = randomProduct.title;
+    document.getElementById('product-price').textContent = randomProduct.newPrice;
+    document.getElementById('product-category').textContent = randomProduct.category || 'General';
+    document.getElementById('product-availability').textContent = 'In Stock'; // Assuming all products are in stock
+    document.getElementById('product-description').textContent = randomProduct.description;
 
-        // Optionally, disable buttons at min/max values
-        const updateButtonStates = () => {
-            decrementButton.disabled = Number(quantityInput.value) <= Number(quantityInput.min);
-            incrementButton.disabled = Number(quantityInput.value) >= Number(quantityInput.max);
-        };
+    const incrementButton = document.getElementById('increment');
+    const decrementButton = document.getElementById('decrement');
+    const quantityInput = document.getElementById('quantity');
 
-        quantityInput.addEventListener('input', updateButtonStates);
-        updateButtonStates(); // Initial check
+    incrementButton.addEventListener('click', () => {
+        const currentValue = Number(quantityInput.value);
+        if (currentValue < Number(quantityInput.max)) {
+            quantityInput.value = currentValue + 1;
+        }
+    });
+
+    decrementButton.addEventListener('click', () => {
+        const currentValue = Number(quantityInput.value);
+        if (currentValue > Number(quantityInput.min)) {
+            quantityInput.value = currentValue - 1;
+        }
+    });
+}

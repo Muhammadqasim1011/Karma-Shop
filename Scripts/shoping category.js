@@ -86,9 +86,10 @@ function renderFeaturedProducts() {
     paginatedProducts.forEach(product => {
         const productItem = document.createElement('div');
         productItem.classList.add('all-grid-item', 'product-item', `product-item-${product.id}`);
+        productItem.setAttribute('data-id', product.id);
 
         productItem.innerHTML = `
-            <img class="product-img" src="${product.imgSrc}" alt="Product-Image">
+            <img class="product-img" src="${product.imgSrc}" alt="Product-Image" data-id="${product.id}">
             <div class="product-content">
                 <h2 class="title">${product.title}</h2>
                 <div class="price">
@@ -99,12 +100,19 @@ function renderFeaturedProducts() {
                     <i class='bx bx-cart-alt add-to-cart-btn'><span>Add to Cart</span></i>
                     <i class='bx bxs-heart'><span>Wishlist</span></i>
                     <i class='bx bx-git-compare'><span>Compare</span></i>
-                    <i class='bx bx-last-page'><span>View more</span></i>
+                    <i class='bx bx-last-page view-more-btn' data-id="${product.id}"><span>View more</span></i>
                 </div>
             </div>
         `;
 
         productContent.appendChild(productItem);
+    });
+
+    document.querySelectorAll('.product-img, .view-more-btn').forEach(element => {
+        element.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            window.location.href = `product detail.html`; // Keep the file name as "product detail.html"
+        });
     });
 }
 
