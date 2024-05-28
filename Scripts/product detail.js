@@ -36,4 +36,28 @@ function renderFeaturedProduct() {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.about-nav-item');
+    const contentItems = document.querySelectorAll('.about-product-item');
 
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all nav items
+            navItems.forEach(nav => nav.classList.remove('active'));
+
+            // Add active class to the clicked nav item
+            item.classList.add('active');
+
+            // Hide all content items
+            contentItems.forEach(content => content.classList.remove('show'));
+
+            // Show the corresponding content item
+            const contentId = `${item.id}-content`;
+            const contentElement = document.getElementById(contentId);
+
+            if (contentElement) {
+                contentElement.classList.add('show');
+            }
+        });
+    });
+});

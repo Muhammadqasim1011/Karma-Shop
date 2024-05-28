@@ -1,0 +1,80 @@
+:root {
+    --dark-clr: #222222;
+    --light-clr: #FFFFFF;
+    --text-clr: rgba(0, 0, 0, 0.8);
+    --text-clr2: rgba(244, 244, 244, 0.4);
+    --ancent1-clr: #FFB600;
+    --ancent2-clr: #FE6D00;
+    --shadow-clr: rgba(0, 0, 0, 0.1);
+    --t-speed: 300ms;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+tr{
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dce7ea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+th{
+    color: var(--dark-clr);
+}
+
+td, th{
+    padding: 13px;
+}
+
+td img{
+    width: 150px;
+    height: 100px;
+    border: 1px solid #dce7ea;
+}
+
+td input{
+    padding: 0.7rem 1rem;
+    border:  1px solid #dce7ea;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid #dce7ea;
+}
+
+.btns input{
+    padding: 0.7rem 1rem;
+    border: 1px solid #dce7ea;
+    background: var(--shadow-clr);
+    transition: color var(--t-speed), background var(--t-speed);
+    font-weight: 600;
+}
+
+input[type=text]{
+    background: var(--light-clr);
+    font-weight: 400;
+    width: 130px;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+input[type=submit]:hover{
+    background: var(--ancent1-clr);
+    color: var(--light-clr);
+}
+
+.sub-total{
+    padding: 1.4rem 0;
+    border-bottom: 1px solid #dce7ea;
+    text-align: ;
+}

@@ -177,6 +177,7 @@ input[type=number] {
     transition: color var(--t-speed), background var(--t-speed);
     font-weight: 600;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .about-product ul .active{
@@ -185,13 +186,19 @@ input[type=number] {
 }
 
 .about-product .about-product-item {
+    display: none;
     padding: 2rem 1.4rem 3rem;
     border: none;
 }
 
-.about-product .discription-content {
-    display: grid;
-    gap: 2rem;
+
+.about-product .about-product-item.show {
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.about-product .discription-content p{
+    margin-bottom: 2rem;
 }
 
 .specification-content .table {

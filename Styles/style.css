@@ -595,7 +595,6 @@ p.old-price{
 .primary-btn{
     padding: 0.8rem 2rem;
     background: linear-gradient(90deg, var(--ancent1-clr), var(--ancent2-clr));
-    border-radius: 100px;
     color: var(--light-clr);
     text-transform: uppercase;
     transition: all var(--t-speed);

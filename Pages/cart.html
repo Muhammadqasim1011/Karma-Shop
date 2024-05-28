@@ -9,6 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../Styles/style.css">
     <link rel="stylesheet" href="../Styles/pages.css">
+    <link rel="stylesheet" href="../Styles/cart.css">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                         <li><a href="shoping category.html">Shoping Category</a></li>
                         <li><a href="product detail.html">Product Details</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
-                        <li><a  href="cart.html">Shopping Cart</a></li>
+                        <li><a href="cart.html">Shopping Cart</a></li>
                         <li><a href="confirmation.html">Confirmation</a></li>
                     </ul>
                 </li>
@@ -42,7 +43,7 @@
                 </li>
                 <li><a class="hw" href="contact.html">Contact</a></li>
                 <li id="cart-icon"><a href="./Pages/cart.html"><i class="bx bx-cart"></i><span class="cart-total"
-                    id="cart-product-count">0</span></a></li>
+                            id="cart-product-count">0</span></a></li>
                 <li><i class='bx bx-search-alt-2 hw'></i></li>
             </ul>
         </nav>
@@ -54,6 +55,53 @@
     </header>
     <!-- End of Header -->
 
+    <section class="item-table wrapper section-gap">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><img src="../Images/cart.jpg" alt=""></td>
+                    <td>
+                        <p>Title of Product</p>
+                    </td>
+                    <td>
+                        <p><strong>$<span>123</span></strong></p>
+                    </td>
+                    <td>
+                        <input type="number" id="quantity" min="1" max="100" value="1">
+                    </td>
+                    <td>
+                        <p><strong>$<span>123</span></strong></p>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="btns">
+            <input type="submit" value="Update Cart">
+            <div>
+                <input type="text" placeholder="Coupon Code">
+                <input type="submit" value="Apply">
+                <input type="submit" value="Close Coupon">
+            </div>
+        </div>
+
+        <div class="sub-total">
+            <p><strong>Subtotal <span>$Total Price of all items</span></strong></p>
+        </div>
+    </section>
 
     <footer>
         <div class="footer-grid wrapper">
@@ -95,16 +143,19 @@
                 <i class='bx bxl-dribbble'></i>
                 <i class='bx bxl-behance'></i>
             </div>
-            <button style="border: none; background: white; padding: 1rem; margin-top: 10px; color: orangered;" id="clear-storage-btn">Clear Local Storage</button>
+            <button style="border: none; background: white; padding: 1rem; margin-top: 10px; color: orangered;"
+                id="clear-storage-btn">Clear Local Storage</button>
 
         </div>
-        <p style="text-align: center; margin: 20px 0; color: white;">Copyright ©2024 All rights reserved | This template is Clone by 
+        <p style="text-align: center; margin: 20px 0; color: white;">Copyright ©2024 All rights reserved | This template
+            is Clone by
             <a style="color: orangered;" href="https://muhammadqasim1011.github.io/Muhammad-Qasim/">Muhammad Qasim</a>
         </p>
     </footer>
     <!-- End of footer -->
     <script src="../Scripts/script.js"></script>
     <script src="../Scripts/product.js"></script>
+    <script src="../Scripts/cart.js"></script>
 </body>
 
 </html>
