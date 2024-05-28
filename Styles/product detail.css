@@ -351,8 +351,4 @@ ul.list{
         padding: 1.4rem 1rem 2rem;
     }
 
-    .about-product .discription-content {
-        display: grid;
-        gap: 1rem;
-    }
 }

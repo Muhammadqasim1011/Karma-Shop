@@ -55,7 +55,7 @@
     </header>
     <!-- End of Header -->
 
-    <section class="item-table wrapper section-gap">
+    <!-- <section class="item-table wrapper section-gap">
 
         <table>
 
@@ -108,7 +108,43 @@
             <a href="./checkout.html">Proceed to checkout</a>
 
         </div>
+    </section> -->
+
+    <section class="item-table wrapper section-gap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-body">
+                <!-- Cart items will be dynamically added here -->
+            </tbody>
+        </table>
+    
+        <div class="btns">
+            <input type="submit" value="Update Cart" id="update-cart">
+            <div>
+                <input type="text" placeholder="Coupon Code">
+                <input type="submit" value="Apply">
+                <input type="submit" value="Close Coupon">
+            </div>
+        </div>
+    
+        <div class="sub-total">
+            <p><strong>Subtotal: $<span id="subtotal">0.00</span></strong></p>
+        </div>
+    
+        <div class="links-btn">
+            <a href="./shoping category.html">Continue Shopping</a>
+            <a href="./checkout.html">Proceed to Checkout</a>
+        </div>
     </section>
+    
 
     <footer>
         <div class="footer-grid wrapper">
@@ -162,6 +198,7 @@
     <!-- End of footer -->
     <script src="../Scripts/script.js"></script>
     <script src="../Scripts/product.js"></script>
+    <script src="../Scripts/shoping category.js"></script>
     <script src="../Scripts/cart.js"></script>
 </body>
 
