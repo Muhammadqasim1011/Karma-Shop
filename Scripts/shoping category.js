@@ -202,3 +202,29 @@ function getCartCountFromLocalStorage() {
     const count = localStorage.getItem('cartProductCount');
     return count ? parseInt(count) : 0;
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const cartProductCount = document.getElementById('cart-product-count');
+    let totalCount = getCartCountFromLocalStorage();
+    cartProductCount.textContent = totalCount;
+
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            totalCount++;
+            cartProductCount.textContent = totalCount;
+            updateCartCountInLocalStorage(totalCount);
+        });
+    });
+});
+
+function updateCartCountInLocalStorage(count) {
+    localStorage.setItem('cartProductCount', count);
+}
+
+function getCartCountFromLocalStorage() {
+    const count = localStorage.getItem('cartProductCount');
+    return count ? parseInt(count) : 0;
+}
